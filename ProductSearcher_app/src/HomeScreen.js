@@ -8,30 +8,6 @@ const width = Dimensions.get('window').width / 2 - 30;
 import placeholder from '../assets/default-product-image.png';
 
 const HomeScreen = ({navigation}) => {
-  // const [catergoryIndex, setCategoryIndex] = React.useState(0);
-
-  // const categories = ['POPULAR', 'ORGANIC', 'INDOORS', 'SYNTHETIC'];
-
-  // const CategoryList = () => {
-  //   return (
-  //     <View style={style.categoryContainer}>
-  //       {categories.map((item, index) => (
-  //         <TouchableOpacity
-  //           key={index}
-  //           activeOpacity={0.8}
-  //           onPress={() => setCategoryIndex(index)}>
-  //           <Text
-  //             style={[
-  //               style.categoryText,
-  //               catergoryIndex === index && style.categoryTextSelected,
-  //             ]}>
-  //             {item}
-  //           </Text>
-  //         </TouchableOpacity>
-  //       ))}
-  //     </View>
-  //   );
-  // };
 
   const Card = ({product}) => {
     return (
@@ -47,15 +23,7 @@ const HomeScreen = ({navigation}) => {
                 borderRadius: 20,
                 justifyContent: 'center',
                 alignItems: 'center',
-                // backgroundColor: product.like
-                //   ? 'rgba(245, 42, 42,0.2)'
-                //   : 'rgba(0,0,0,0.2) ',
               }}>
-              {/* <Icon
-                name="favorite"
-                size={18}
-                color={product.like ? COLORS.red : COLORS.black}
-              /> */}
             </View>
           </View>
 
@@ -66,7 +34,7 @@ const HomeScreen = ({navigation}) => {
             }}>
             <Image
               source={placeholder}
-              // source={product.img}
+
               style={{flex: 1, resizeMode: 'contain'}}
             />
           </View>
@@ -83,20 +51,6 @@ const HomeScreen = ({navigation}) => {
             <Text style={{fontSize: 19, fontWeight: 'bold'}}>
               ${product.price}
             </Text>
-            {/* <View
-              style={{
-                height: 25,
-                width: 25,
-                backgroundColor: COLORS.blue,
-                borderRadius: 5,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Text
-                style={{fontSize: 22, color: COLORS.white, fontWeight: 'bold'}}>
-                +
-              </Text>
-            </View> */}
           </View>
         </View>
       </TouchableOpacity>
@@ -112,18 +66,15 @@ const HomeScreen = ({navigation}) => {
             Product Searcher
           </Text>
         </View>
-        {/* <Icon name="shopping-cart" size={28} /> */}
       </View>
       <View style={{marginTop: 15, flexDirection: 'row'}}>
         <View style={style.searchContainer}>
-          {/* <Icon name="search" size={25} style={{marginLeft: 20}} /> */}
           <TextInput placeholder="Search your product" style={style.input} />
         </View>
         <View style={style.searchBtn}>
           <Icon name="search" size={30} color={COLORS.white} />
         </View>
       </View>
-      {/* <CategoryList /> */}
       <FlatList
         columnWrapperStyle={{justifyContent: 'space-between'}}
         showsVerticalScrollIndicator={false}
@@ -142,19 +93,6 @@ const HomeScreen = ({navigation}) => {
 };
 
 const style = StyleSheet.create({
-  categoryContainer: {
-    flexDirection: 'row',
-    marginTop: 30,
-    marginBottom: 20,
-    justifyContent: 'space-between',
-  },
-  categoryText: {fontSize: 16, color: 'grey', fontWeight: 'bold'},
-  categoryTextSelected: {
-    color: COLORS.blue,
-    paddingBottom: 5,
-    borderBottomWidth: 2,
-    borderColor: COLORS.blue,
-  },
   card: {
     height: 225,
     backgroundColor: COLORS.light,

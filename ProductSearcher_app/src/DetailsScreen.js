@@ -15,7 +15,6 @@ const DetailsScreen = ({navigation, route}) => {
       }}>
       <View style={style.header}>
         <Icon name="arrow-back" size={28} onPress={() => navigation.goBack()} />
-        {/* <Icon name="shopping-cart" size={28} /> */}
       </View>
       <View style={style.imageContainer}>
         <Image source={placeholder} style={{resizeMode: 'contain', flex: 1}} />
@@ -27,8 +26,6 @@ const DetailsScreen = ({navigation, route}) => {
             flexDirection: 'row',
             alignItems: 'flex-end',
           }}>
-          {/* <View style={style.line} />
-          <Text style={{fontSize: 18, fontWeight: 'bold'}}>Best choice</Text> */}
         </View>
         <View
           style={{
@@ -73,28 +70,7 @@ const DetailsScreen = ({navigation, route}) => {
                 flexDirection: 'row',
                 alignItems: 'center',
               }}>
-              {/* <View style={style.borderBtn}>
-                <Text style={style.borderBtnText}>-</Text>
-              </View> */}
-              {/* <Text
-                style={{
-                  fontSize: 20,
-                  marginHorizontal: 10,
-                  fontWeight: 'bold',
-                }}>
-                1
-              </Text>
-              <View style={style.borderBtn}>
-                <Text style={style.borderBtnText}>+</Text>
-              </View> */}
             </View>
-
-            {/* <View style={style.buyBtn}>
-              <Text
-                style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-                Buy
-              </Text>
-            </View> */}
           </View>
         </View>
       </View>
@@ -123,31 +99,6 @@ const style = StyleSheet.create({
     borderRadius: 20,
     marginTop: 30,
     paddingTop: 30,
-  },
-  line: {
-    width: 25,
-    height: 2,
-    backgroundColor: COLORS.dark,
-    marginBottom: 5,
-    marginRight: 3,
-  },
-  borderBtn: {
-    borderColor: 'grey',
-    borderWidth: 1,
-    borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 60,
-    height: 40,
-  },
-  borderBtnText: {fontWeight: 'bold', fontSize: 28},
-  buyBtn: {
-    width: 130,
-    height: 50,
-    backgroundColor: COLORS.blue,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 30,
   },
   priceTag: {
     backgroundColor: COLORS.blue,
