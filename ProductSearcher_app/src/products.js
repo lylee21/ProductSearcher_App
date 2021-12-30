@@ -1,10 +1,10 @@
-const plants = [
+const products = [
 	{
 		id: 1,
 		name: "Oneplus Nord",
 		price: "226.71",
 		like: true,
-		//   img: require('../assets/plant1.png'),
+		//   img: require('../assets/product1.png'),
 		about: "Oneplus Nord N100",
 	},
 
@@ -13,7 +13,7 @@ const plants = [
 		name: "OnePlus Nord 2",
 		price: "799.00",
 		like: false,
-		//   img: require('../assets/plant2.png'),
+		//   img: require('../assets/product2.png'),
 		about: "OnePlus Nord 2 5G",
 	},
 	{
@@ -21,7 +21,7 @@ const plants = [
 		name: "OnePlus 8T",
 		price: "1,099.00",
 		like: false,
-		//   img: require('../assets/plant3.png'),
+		//   img: require('../assets/product3.png'),
 		about: "OnePlus 8T",
 	},
 
@@ -30,7 +30,7 @@ const plants = [
 		name: "OPPO Find X3 Pro",
 		price: "1,020.00",
 		like: true,
-		//   img: require('../assets/plant4.png'),
+		//   img: require('../assets/product4.png'),
 		about: "OPPO Find X3 Pro",
 	},
 	{
@@ -38,7 +38,7 @@ const plants = [
 		name: "Mi 11 T Pro",
 		price: "768.00",
 		like: true,
-		//   img: require('../assets/plant5.png'),
+		//   img: require('../assets/product5.png'),
 		about: "Mi 11 T Pro",
 	},
 	{
@@ -46,9 +46,9 @@ const plants = [
 		name: "I PHONE 13 MINI",
 		price: "1,099.00",
 		like: false,
-		//   img: require('../assets/plant6.png'),
+		//   img: require('../assets/product6.png'),
 		about: "I PHONE 13 MINI",
 	},
 ];
 
-export default plants;
+export default products;
