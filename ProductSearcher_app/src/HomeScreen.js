@@ -3,7 +3,7 @@ import {View, SafeAreaView, Text, StyleSheet, FlatList, Image, Dimensions} from 
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './colors';
-import plants from './plants';
+import products from './products';
 const width = Dimensions.get('window').width / 2 - 30;
 import placeholder from '../assets/default-product-image.png';
 
@@ -33,11 +33,11 @@ const HomeScreen = ({navigation}) => {
   //   );
   // };
 
-  const Card = ({plant}) => {
+  const Card = ({product}) => {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
-        onPress={() => navigation.navigate('Details', plant)}>
+        onPress={() => navigation.navigate('Details', product)}>
         <View style={style.card}>
           <View style={{alignItems: 'flex-end'}}>
             <View
@@ -47,14 +47,14 @@ const HomeScreen = ({navigation}) => {
                 borderRadius: 20,
                 justifyContent: 'center',
                 alignItems: 'center',
-                // backgroundColor: plant.like
+                // backgroundColor: product.like
                 //   ? 'rgba(245, 42, 42,0.2)'
                 //   : 'rgba(0,0,0,0.2) ',
               }}>
               {/* <Icon
                 name="favorite"
                 size={18}
-                color={plant.like ? COLORS.red : COLORS.black}
+                color={product.like ? COLORS.red : COLORS.black}
               /> */}
             </View>
           </View>
@@ -66,13 +66,13 @@ const HomeScreen = ({navigation}) => {
             }}>
             <Image
               source={placeholder}
-              // source={plant.img}
+              // source={product.img}
               style={{flex: 1, resizeMode: 'contain'}}
             />
           </View>
 
           <Text style={{fontWeight: 'bold', fontSize: 17, marginTop: 10}}>
-            {plant.name}
+            {product.name}
           </Text>
           <View
             style={{
@@ -81,7 +81,7 @@ const HomeScreen = ({navigation}) => {
               marginTop: 5,
             }}>
             <Text style={{fontSize: 19, fontWeight: 'bold'}}>
-              ${plant.price}
+              ${product.price}
             </Text>
             {/* <View
               style={{
@@ -132,9 +132,9 @@ const HomeScreen = ({navigation}) => {
           paddingBottom: 50,
         }}
         numColumns={2}
-        data={plants}
+        data={products}
         renderItem={({item}) => {
-          return <Card plant={item} />;
+          return <Card product={item} />;
         }}
       />
     </SafeAreaView>

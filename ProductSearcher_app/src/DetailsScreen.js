@@ -2,9 +2,10 @@ import React from 'react';
 import {View, SafeAreaView, Image, Text, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './colors';
+import placeholder from '../assets/default-product-image.png';
 
 const DetailsScreen = ({navigation, route}) => {
-  const plant = route.params;
+  const product = route.params;
 
   return (
     <SafeAreaView
@@ -14,10 +15,10 @@ const DetailsScreen = ({navigation, route}) => {
       }}>
       <View style={style.header}>
         <Icon name="arrow-back" size={28} onPress={() => navigation.goBack()} />
-        <Icon name="shopping-cart" size={28} />
+        {/* <Icon name="shopping-cart" size={28} /> */}
       </View>
       <View style={style.imageContainer}>
-        <Image source={plant.img} style={{resizeMode: 'contain', flex: 1}} />
+        <Image source={placeholder} style={{resizeMode: 'contain', flex: 1}} />
       </View>
       <View style={style.detailsContainer}>
         <View
@@ -26,8 +27,8 @@ const DetailsScreen = ({navigation, route}) => {
             flexDirection: 'row',
             alignItems: 'flex-end',
           }}>
-          <View style={style.line} />
-          <Text style={{fontSize: 18, fontWeight: 'bold'}}>Best choice</Text>
+          {/* <View style={style.line} />
+          <Text style={{fontSize: 18, fontWeight: 'bold'}}>Best choice</Text> */}
         </View>
         <View
           style={{
@@ -37,7 +38,7 @@ const DetailsScreen = ({navigation, route}) => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 22, fontWeight: 'bold'}}>{plant.name}</Text>
+          <Text style={{fontSize: 30, fontWeight: 'bold'}}>{product.name}</Text>
           <View style={style.priceTag}>
             <Text
               style={{
@@ -46,12 +47,12 @@ const DetailsScreen = ({navigation, route}) => {
                 fontWeight: 'bold',
                 fontSize: 16,
               }}>
-              ${plant.price}
+              ${product.price}
             </Text>
           </View>
         </View>
         <View style={{paddingHorizontal: 20, marginTop: 10}}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>About</Text>
+          <Text style={{fontSize: 20, fontWeight: 'bold'}}>Description</Text>
           <Text
             style={{
               color: 'grey',
@@ -59,7 +60,7 @@ const DetailsScreen = ({navigation, route}) => {
               lineHeight: 22,
               marginTop: 10,
             }}>
-            {plant.about}
+            {product.about}
           </Text>
           <View
             style={{
@@ -72,10 +73,10 @@ const DetailsScreen = ({navigation, route}) => {
                 flexDirection: 'row',
                 alignItems: 'center',
               }}>
-              <View style={style.borderBtn}>
+              {/* <View style={style.borderBtn}>
                 <Text style={style.borderBtnText}>-</Text>
-              </View>
-              <Text
+              </View> */}
+              {/* <Text
                 style={{
                   fontSize: 20,
                   marginHorizontal: 10,
@@ -85,15 +86,15 @@ const DetailsScreen = ({navigation, route}) => {
               </Text>
               <View style={style.borderBtn}>
                 <Text style={style.borderBtnText}>+</Text>
-              </View>
+              </View> */}
             </View>
 
-            <View style={style.buyBtn}>
+            {/* <View style={style.buyBtn}>
               <Text
                 style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
                 Buy
               </Text>
-            </View>
+            </View> */}
           </View>
         </View>
       </View>
@@ -143,16 +144,17 @@ const style = StyleSheet.create({
   buyBtn: {
     width: 130,
     height: 50,
-    backgroundColor: COLORS.green,
+    backgroundColor: COLORS.blue,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
   },
   priceTag: {
-    backgroundColor: COLORS.green,
-    width: 80,
+    backgroundColor: COLORS.blue,
+    width: 100,
     height: 40,
     justifyContent: 'center',
+    paddingLeft:5,
     borderTopLeftRadius: 25,
     borderBottomLeftRadius: 25,
   },
